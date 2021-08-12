@@ -14,8 +14,8 @@ Refers to the [freakdesign blog post](http://freakdesign.com.au/blogs/news/trans
 {%- include dateTranslate, dateString:article.published_at language:'French' -%}
 ```
 
-*Snippet usage #2:*
+*Snippet usage #2:* (Cette Solution fonctionne)
 ```
-{%- assign newDate = 'now' | date:'%A %B %d, %Y' -%}
-{%- include dateTranslate, dateString:newDate language:'French' -%}
+{% assign article_date = article.published_at | date: "%d %B %Y" %}
+{%- render 'date-translate' dateString:article_date, language:'French' -%}
 ```
